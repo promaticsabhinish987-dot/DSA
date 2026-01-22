@@ -100,6 +100,39 @@ No recursive call for the duplicate. take more recursive space if we call with d
 
 
 
+3. Backtracking for permutation
+
+ 
+```javascript
+function permuteb(str) {
+    let result = [];
+    let inputStr = str.split("");
+    function backtracking(currentIndex) {
+     if (currentIndex === inputStr.length - 1) {
+            result.push(inputStr.join(""));
+            return;
+        }
+         let used = new Set();
+        for (let i = currentIndex; i < inputStr.length; i++) {
+            if (used.has(inputStr[i])) 
+                 continue;
+
+            used.add(inputStr[i]);
+            [inputStr[currentIndex], inputStr[i]] = [inputStr[i], inputStr[currentIndex]];
+            backtracking(currentIndex + 1);
+            [inputStr[currentIndex], inputStr[i]] = [inputStr[i], inputStr[currentIndex]];
+        }
+    }
+    backtracking(0)
+    return result
+}
+
+
+console.log(permuteb("abb"));
+
+```
+Note :- take care of the ; otherwise it will show different result.
+
 
 
 
