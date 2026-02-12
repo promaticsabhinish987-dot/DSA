@@ -1,4 +1,4 @@
-I’ll explain **Heap** from **first principles**, in very simple language, and I’ll connect it to **how humans naturally think and prioritize things** so it sticks in your brain.
+A Heap is a Complete Binary Tree stored efficiently using an array, where parent-child relationships are maintained using index formulas.
 
 ---
 
