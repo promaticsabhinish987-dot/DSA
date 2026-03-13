@@ -311,9 +311,73 @@ function computeDirectedDegree(n, edges) {
 
 
 
+# 3. Check if Edge Exists
+
+implement hasEdge(u,v)
+
+
+```ts
+
+// 3 implement hasEdge(u, v) if edge exist between this nodes, u to v
+
+function hasEdge(adjMatrix,u, v){
+return adjMatrix[u][v]==1;
+}
+
+console.log(hasEdge(buildAdjMatrix(n,edges),0,3))  //O(1)
+
+// for adj list
+
+function hasEdge2(adjList,u,v){
+   return adjList[u].includes(v);
+}
+
+console.log(hasEdge2(buildAdjList(n, edges),1,3)) //O(n because traverse list linearly)
+
+// solution  , create list with set so that we can use .has() to check if connection exist in O(n)
 
 
 
+```
+
+```ts
+
+
+// create adj list with set to get value in O(1) with has()
+
+function createadjListWithset(n){
+    let adj=[];
+    for(let i=0;i<n;i++){
+        adj[i]=new Set();
+    }
+    return adj;
+}
+
+console.log(createadjListWithset(n))
+
+
+function buildAdjlistWithSet(n,edges){
+    let adj=createadjListWithset(n);
+    for(let [u,v] of edges){
+        adj[u].add(v);
+        adj[v].add(u);
+    }
+    return adj
+}
+
+
+console.log(buildAdjlistWithSet(n,edges))
+
+
+function  hasEdge(adjlistWithSet,u,v){
+    return adjlistWithSet[u].has(v);
+}
+
+
+console.log(hasEdge(buildAdjlistWithSet(n,edges),1,3))
+
+
+```
 
 
 
