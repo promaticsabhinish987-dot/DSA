@@ -208,3 +208,99 @@ console.log("dfsStack============");
 console.log(dfsStack(buildAdjList(n, edges))) // adj list
 
 ```
+With diconnected graph
+
+```ts
+function dfsStackMatrix(adjMatrix){
+
+   let visited = new Set();
+   let result = [];
+
+   for(let start = 0; start < adjMatrix.length; start++){
+
+      if(visited.has(start)) continue;
+
+      let stack = [start];
+      visited.add(start);
+
+      while(stack.length){
+
+         let node = stack.pop();
+         result.push(node);
+
+         for(let i = 0; i < adjMatrix.length; i++){
+
+            if(adjMatrix[node][i] === 1 && !visited.has(i)){
+               visited.add(i);
+               stack.push(i);
+            }
+
+         }
+      }
+   }
+
+   return result;
+}
+```
+
+
+## 3. count components of a graph
+Graph can be disconnected with multiple components , just count components. and return count.
+
+
+
+```ts
+function dfsStackMatrixcounter(adjMatrix){
+
+   let visited = new Set();
+   let count = 0;
+   let result = [];
+
+   for(let start = 0; start < adjMatrix.length; start++){
+
+      if(visited.has(start)) continue; // if its not visited in 1st traversal
+            count++
+      let stack = [start];
+      visited.add(start);
+
+
+      while(stack.length){
+
+         let node = stack.pop();
+         result.push(node);
+
+         for(let i = 0; i < adjMatrix.length; i++){
+
+            if(adjMatrix[node][i] === 1 && !visited.has(i)){
+               visited.add(i);
+               stack.push(i);
+            }
+
+         }
+      }
+   }
+
+   return count;
+}
+
+
+console.log(dfsStackMatrixcounter(buildAdjMatrix(n, edges))); //3 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
