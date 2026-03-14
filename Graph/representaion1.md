@@ -376,7 +376,27 @@ function  hasEdge(adjlistWithSet,u,v){
 
 console.log(hasEdge(buildAdjlistWithSet(n,edges),1,3))
 
+function dfsStackMatrix(adjMatrix){
+   let visited=new Set();
+   let result=[];
+   let stack=[]
+   visited.add(0);
+   stack.push(0);
 
+   while(stack.length){
+    let node = stack.pop();
+    result.push(node);
+
+    for(let i=0;i<adjMatrix.length;i++){
+      if(adjMatrix[node][i]==1 && !visited.has(i)){
+         visited.add(i);
+         stack.push(i)
+      }
+    }
+   }
+
+   return result;
+}
 ```
 
 
