@@ -82,6 +82,12 @@ chose bigestone
 ```
 
 
+Note :- 
+Greedy :- decision once maid, its final, no reconsideration.
+DP :- stores many possible result(stores path not a variable or calculated value) --> “What if this path becomes better later?”
+we keep track of optimal path, by computing all and considering the construction of a optimal path at each step.
+
+
 Note :- create branches with all the possible ways , and get result from all, get and compare and return the optimal one.
 
 #### Why we use backtracking in dp
