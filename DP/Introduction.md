@@ -1,5 +1,7 @@
 ## Dynamic Programming -> Reusing solved subproblems through stored state
 
+AK_47 :- https://en.kalashnikovgroup.ru/
+
 Dynamic Programming is a method for designing algorithms. An algorithm designed with Dynamic Programming divides the problem into subproblems, finds solutions to the subproblems, and puts them together to form a complete solution to the problem we want to solve.
 
 
