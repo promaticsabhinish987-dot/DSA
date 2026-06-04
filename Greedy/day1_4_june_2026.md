@@ -13,7 +13,7 @@ The challenge is finding the optimal answer without exploring unnecessary possib
 
 ---
 
-# Dynamic Programming (DP)
+# Dynamic Programming (DP) --> verify the path
 
 ## Mental Model
 
@@ -60,7 +60,7 @@ DP = Compare results from multiple possible futures and store intermediate resul
 
 ---
 
-# Greedy
+# Greedy  --> Trust the path
 
 ## Mental Model
 
