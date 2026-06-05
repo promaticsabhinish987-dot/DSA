@@ -163,7 +163,13 @@ Greedy works because sorting reveals which local choice is safest.
 **Pattern** :- if we have two group, and each element of that group have numeric , value, and we have to give one to other , then we will use this pattern.
 
 
+```
+We will have 1st needy person,
 
+we will traverse the cookie, until when we find the cookie that can satisfy that person,
+
+if person will satisfy , then we will ++ both the cookie and the person.
+```
 
 
 
