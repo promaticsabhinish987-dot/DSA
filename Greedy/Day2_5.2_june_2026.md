@@ -135,9 +135,31 @@ return count
 ========================================================================================
 
 
+```ts
 
+function findLongestChain(pairs) {
+    pairs.sort((a, b) => a[1] - b[1]);
 
+    let count = 1;
+    let lastEnd = pairs[0][1];
 
+    for (let i = 1; i < pairs.length; i++) {
+        const [start, end] = pairs[i];
+
+        if (start > lastEnd) {
+            count++;
+            lastEnd = end;
+        }
+    }
+
+    return count;
+}
+```
+
+Activity selection is a category of Interval greedy , but its more specific , for the competion for resource.
+
+Activity selection :- maximize the number of activity
+Interval Greedy :- maximize any itnerval problem
 
 
 
